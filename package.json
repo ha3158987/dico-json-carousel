@@ -4,7 +4,7 @@
     "url":"https://github.com/ha3158987/dico-json-carousel"
   },
   "name": "dico-json-carousel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "module": "dist/Carousel.js",
   "main": "dist/Carousel.js",
