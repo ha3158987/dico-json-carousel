@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# dico-json-carousel 🎠
+## Introduction 🔖
+Easy-breezy React-slider module for everyone!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+## Sample 🍭
+![녹화](https://user-images.githubusercontent.com/65105537/116818613-49bddd80-aba7-11eb-9e33-5ce21b441f1e.gif)
 
-## Available Scripts
+---
+## Installation ✨
+Copy & paste the following to your CLI:
+```javascript
+npm i dico-json-carousel
+```
 
-In the project directory, you can run:
+---
+## How to use 💡
+###  Default setting
 
-### `npm start`
+| key | value | description |
+|----:|:-----:|:-----------:|
+|`perPanel`| 4 |Number of items to put on each page.|
+|`speed`| 500 | Animation transition speed in millisecond.|
+|`count`| false| Page information: shown as 'current page / last page'.|
+|`loop`| true | Infinite-loop sliding option.|
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+### Props
+- `children` : An "**Array**" that holds the items you want to put on each slide.
+- `options` : An "**Object**" that holds the information about your customizing options of the carousel. You can customize `perPanel`, `speed`, `count`, `loop` options as you want!
+```javascript
+import React from "react";
+import styled from "styled-components";
+import Carousel from "dico-json-carousel";
+const Card = styled.div`
+  height: 10vh;
+  padding: 3rem;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 0.25rem;
+`;
+function App() {
+  const options = {
+    perPanel : 4,
+    speed: 500,
+    count: true,
+    loop: false
+  }
+  return (
+    <div className="App">
+      <Carousel options={options}>
+        <Card>1</Card>
+        <Card>2</Card>
+        <Card>3</Card>
+        <Card>4</Card>
+        <Card>5</Card>
+        <Card>6</Card>
+        <Card>6</Card>
+      </Carousel>
+    </div>
+  );
+}
+export default App;
+```
+---
